@@ -1,4 +1,4 @@
-import { userState } from 'react';
+import { useState } from 'react';
 
 const Bookshelf = () => {
     const [books, setBooks] = useState([
@@ -12,7 +12,7 @@ const Bookshelf = () => {
         },
     ]);
 
-    const [newBook, setNewBook] = userState(
+    const [newBook, setNewBook] = useState(
         {
             title: '',
             author: '',
@@ -21,6 +21,11 @@ const Bookshelf = () => {
 
     const handInputChange = (event) => {
         setNewBook({ ...newBook, [event.target.name]: [event.target.value]});
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setBooks((shelvedBooks) => [...shelvedBooks, newBook]);
     };
 
     return (
