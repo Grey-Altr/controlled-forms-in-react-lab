@@ -19,7 +19,7 @@ const Bookshelf = () => {
         }
     );
 
-    const handInputChange = (event) => {
+    const handleInputChange = (event) => {
         setNewBook({ ...newBook, [event.target.name]: [event.target.value]});
     };
 
@@ -36,6 +36,23 @@ const Bookshelf = () => {
         <div className="bookshelfDiv">
             <div className="formDiv">
                 <h3>Add a Book</h3>
+                <form onSubmit={handleSubmit}>
+                    <p>Title:</p>
+                    <input
+                    type='text'
+                    name='title'
+                    value={newBook.title}
+                    onChange={handleInputChange}
+                    />
+                    <p>Author:</p>
+                    <input
+                    type='text'
+                    name='author'
+                    value={newBook.author}
+                    onChange={handleInputChange}
+                    />
+                    <button type='submit'>Add Book</button>
+                </form>
             </div>
             <div className="bookCardsDiv"></div>
         </div>
