@@ -20,7 +20,7 @@ const Bookshelf = () => {
     );
 
     const handInputChange = (event) => {
-        setNewBook({ ...newbook, [event.target.name]: [event.target.value]});
+        setNewBook({ ...newBook, [event.target.name]: [event.target.value]});
     };
 
     return (
