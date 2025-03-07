@@ -12,12 +12,16 @@ const Bookshelf = () => {
         },
     ]);
 
-    const [newbook, setNewBook] = userState(
+    const [newBook, setNewBook] = userState(
         {
             title: '',
             author: '',
         }
     );
+
+    const handInputChange = (event) => {
+        setNewBook({ ...newbook, [event.target.name]: [event.target.value]});
+    };
 
     return (
         <div className="bookshelfDiv">
