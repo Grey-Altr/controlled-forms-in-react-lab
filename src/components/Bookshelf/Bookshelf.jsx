@@ -26,6 +26,10 @@ const Bookshelf = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setBooks((shelvedBooks) => [...shelvedBooks, newBook]);
+        setNewBook({
+            title: '',
+            author: '',
+        });
     };
 
     return (
